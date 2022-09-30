@@ -8,6 +8,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use("/home", (req,res) => {
+    res.json({
+        msg:"Hi Im from express app-- after github ci cd pipeline"
+    })
+})
 
 //routes middleware
 app.use("/users",require("./routes/user"));
